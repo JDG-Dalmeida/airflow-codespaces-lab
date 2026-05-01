@@ -1,0 +1,18 @@
+from datetime import datetime
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+ 
+def hello():
+    print("Hello from Airflow in Codespaces 🚀")
+ 
+with DAG(
+    dag_id="hello_airflow",
+    start_date=datetime(2024, 1, 1),
+    schedule_interval="@daily",
+    catchup=False
+) as dag:
+ 
+    task = PythonOperator(
+        task_id="say_hello",
+        python_callable=hello
+    )

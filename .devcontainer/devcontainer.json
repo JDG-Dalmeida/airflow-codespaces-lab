@@ -1,0 +1,13 @@
+{
+  "name": "Airflow Codespace",
+  "image": "mcr.microsoft.com/devcontainers/python:3.10",
+  "features": {},
+  "postCreateCommand": "pip install apache-airflow==2.9.3 --constraint 'https://raw.githubusercontent.com/apache/airflow/constraints-2.9.3/constraints-3.10.txt'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ]
+    }
+  }
+}
